@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int a=2;
+    switch(a)
+    {
+        case 1:
+        printf("java");
+        break;
+        case 2:
+        printf("python");
+        break;
+        case 3:
+        printf("C");
+        break;
+        default:
+        printf("invalid");
+    }
+    return 0;
+}
