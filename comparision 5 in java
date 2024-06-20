@@ -1,0 +1,38 @@
+The comparison is as: A = B, A < B, A > B
+
+Check whether it is Right or Wrong
+PROGRAM:
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        scanner.nextLine();         
+
+        String[] results = new String[t];
+        for (int i = 0; i < t; i++) {
+            int A = scanner.nextInt();
+            String operator = scanner.next();
+            int B = scanner.nextInt();
+            boolean comparisonResult = false;
+            switch (operator) {
+                case "==":
+                    comparisonResult = (A == B);
+                    break;
+                case "<":
+                    comparisonResult = (A < B);
+                    break;
+                case ">":
+                    comparisonResult = (A > B);
+                    break;
+            }
+            results[i] = (comparisonResult ? "Right" : "Wrong");
+        }
+        for (String result : results) {
+            System.out.println(result);
+        }
+        scanner.close();
+    }
+}
