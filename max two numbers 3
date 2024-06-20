@@ -1,0 +1,15 @@
+Given two numbers, print maximum of two numbers.z
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long A = scanner.nextLong();
+        long B = scanner.nextLong();
+        long max = Math.max(A, B);
+        System.out.println(max);
+        scanner.close();
+    }
+}
