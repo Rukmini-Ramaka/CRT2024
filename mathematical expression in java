@@ -1,0 +1,57 @@
+The expression will be one of the following expressions:
+
+A + B = C, A - B = C and A * B = C.
+
+where A, B, C are three numbers, S is the sign between A and B, and Q is the '=' sign.
+
+If the expression is right print "Yes", Otherwise print the right answer of the expression.
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        scanner.nextLine(); 
+        String[] results = new String[t];
+        for (int i = 0; i < t; i++) {
+            int A = scanner.nextInt();
+            char S = scanner.next().charAt(0);
+            int B = scanner.nextInt();
+            String Q = scanner.next(); 
+            int C = scanner.nextInt();
+            int expectedResult = 0;
+            switch (S) {
+                case '+':
+                    expectedResult = A + B;
+                    break;
+                case '-':
+                    expectedResult = A - B;
+                    break;
+                case '*':
+                    expectedResult = A * B;
+                    break;
+            }
+            if (expectedResult == C && Q.equals("=")) {
+                results[i] = "Yes";
+            } else {
+                switch (S) {
+                    case '+':
+                        results[i] = (A + B) + "";
+                        break;
+                    case '-':
+                        results[i] = (A - B) + "";
+                        break;
+                    case '*':
+                        results[i] = (A * B) + "";
+                        break;
+                }
+            }
+        }
+        for (String result : results) {
+            System.out.println(result);
+        }
+        scanner.close();
+    }
+}
