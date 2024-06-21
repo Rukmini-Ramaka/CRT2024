@@ -1,0 +1,72 @@
+Mr.Kumar went to purchase stationary items for his office. He asked the shopkeeper for a discount. The shopkeeper said that if he purchases more than 200 quantity of the item, then a discount of 20% can be applied on the total bill amount, excluding the GST. Get the Quantity and price per item as an input and calculate and tell whether Mr.Kumar is eligible for the discount and what would be the net amount he has to pay after the discount. Take the GST at 18%. Net Amount = Total bill amount after discount + GST
+
+Input Format
+
+Enter quantity Enter price per unit
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Print the output
+
+Sample Input 0
+
+100
+5
+Sample Output 0
+
+Quantity Ordered 100
+Price per item is Rs.5
+Total Amount = Rs.500
+GST - Rs.90.0
+Net Amount Payable is Rs.590.0
+Sample Input 1
+
+350
+20
+Sample Output 1
+
+Quantity Ordered 350
+Price per item is Rs.20
+Total Amount = Rs.7000
+Discount Earned = Rs.1400.0
+Amount after Discount - Rs.5600.0
+GST - Rs.1008.0
+Net Amount Payable is Rs.6608.0
+
+#include <stdio.h>
+
+int main() {
+    int quantity;
+    float price_per_unit, total_amount, gst_amount, discount_amount, net_amount;
+    scanf("%d", &quantity);
+    scanf("%f", &price_per_unit);
+    total_amount = quantity * price_per_unit;
+    gst_amount = 0.18 * total_amount;
+
+    printf("Quantity Ordered %d\n", quantity);
+    printf("Price per item is Rs.%0.0f\n", price_per_unit);
+    printf("Total Amount = Rs.%0.0f\n", total_amount);
+
+    if (quantity > 200) {
+        discount_amount = 0.2 * total_amount;
+        net_amount = total_amount - discount_amount;
+        printf("Discount Earned = Rs.%0.1f\n", discount_amount);
+        printf("Amount after Discount - Rs.%0.1f\n", net_amount); 
+    } else {
+        net_amount = total_amount;
+    }
+
+    gst_amount = 0.18 * net_amount;
+
+    printf("GST - Rs.%0.1f\n", gst_amount); 
+    printf("Net Amount Payable is Rs.%0.1f\n", net_amount + gst_amount); 
+
+    return 0;
+}
+
+
+
