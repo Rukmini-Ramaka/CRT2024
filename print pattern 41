@@ -1,0 +1,73 @@
+Given below is the cross pattern has the shape of the mathematical cross sign (X).
+
+Input Format
+
+Read no of rows
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Cross pattern has the shape of the mathematical cross sign (X).
+
+Sample Input 0
+
+5
+Sample Output 0
+
+*   *
+ * * 
+  *  
+ * * 
+*   *
+Sample Input 1
+
+10
+Sample Output 1
+
+*        *
+ *      * 
+  *    *  
+   *  *   
+    **    
+    **    
+   *  *   
+  *    *  
+ *      * 
+*        *
+Sample Input 2
+
+8
+Sample Output 2
+
+*      *
+ *    * 
+  *  *  
+   **   
+   **   
+  *  *  
+ *    * 
+*      *
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (j == i || j == (n - 1 - i)) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
